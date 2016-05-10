@@ -2,7 +2,7 @@ module Pardot
   module Authentication
     
     def authenticate
-      resp = post_query "login", nil, :email => @email, :password => @password, :user_key => @user_key
+      resp = post "login", nil, :email => @email, :password => @password, :user_key => @user_key
       @api_key = resp && resp["api_key"]
     end
     
