@@ -19,6 +19,7 @@ module Pardot
         end
         
         def assign_by_email email, params
+          email = ERB::Util.url_encode(email)
           post "/do/assign/email/#{email}", params
         end
         
@@ -27,10 +28,12 @@ module Pardot
         end
         
         def create email, params = {}
+          email = ERB::Util.url_encode(email)
           post "/do/create/email/#{email}", params
         end
         
         def read_by_email email, params = {}
+          email = ERB::Util.url_encode(email)
           post "/do/read/email/#{email}", params
         end
         
@@ -39,6 +42,7 @@ module Pardot
         end
         
         def update_by_email email, params = {}
+          email = ERB::Util.url_encode(email)
           post "/do/update/email/#{email}", params
         end
         
@@ -47,6 +51,7 @@ module Pardot
         end
         
         def upsert_by_email email, params = {}
+          email = ERB::Util.url_encode(email)
           post "/do/upsert/email/#{email}", params
         end
         
